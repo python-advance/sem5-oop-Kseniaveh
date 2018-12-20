@@ -43,7 +43,7 @@ class Participant():
   @birthyear.setter
   def birthyear(self, value):
     pattern_bd = r".*([1-3][0-9]{3})"
-    bd_prov = re.compile(pattern_bd)
+    bd_prov = re.compile(pattern_bd) # re.compile -компиляции регулярного выражения
     self.logger.append("Успешно создан паттерн для года рождения")
 
     if (not (bd_prov.findall(str(value)))):
@@ -66,7 +66,7 @@ class Participant():
   @email.setter
   def email(self, value):
     pattern = r"^[a-zA-Z0-9]{1,100}[@][a-z]{2,6}\.[a-z]{2,4}"
-    number_re = re.compile(pattern)
+    number_re = re.compile(pattern) # re.compile -компиляции регулярного выражения
     self.logger.append("Успешно создан паттерн для emali")
 
     if (not (number_re.findall(str(value)))):
